@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef } from "react";
 
 import * as Styled from "./styled.js";
 
@@ -12,23 +12,11 @@ const PATH_COMMANDS = "M18 2 a 15 15 0 0 1 0 31 a 15 15 0 0 1 0 -31";
 const CircularChart = ({ totalSize, data, usedSize }) => {
     const [isShowTooltip, setIsShowTooltip] = useState(false);
     const [tooltipData, setTooltipData] = useState();
-    const [chartWrapperPosition, setChartWrapperPosition] = useState({
-        x: null,
-        y: null,
-    });
     const [tooltipPosition, setTooltipPosition] = useState({
         x: 0,
         y: 0,
     });
     const chartRef = useRef();
-
-    useLayoutEffect(() => {
-        setChartWrapperPosition({
-            x: chartRef.current.getBoundingClientRect().x,
-            y: chartRef.current.getBoundingClientRect().y,
-        });
-    }, []);
-    //console.log(chartWrapperPosition);
 
     return (
         <Styled.CircularChartWrapper ref={chartRef}>
@@ -45,7 +33,6 @@ const CircularChart = ({ totalSize, data, usedSize }) => {
                     data={data}
                     setIsShowTooltip={setIsShowTooltip}
                     setTooltipPosition={setTooltipPosition}
-                    chartWrapperPosition={chartWrapperPosition}
                     setTooltipData={setTooltipData}
                 />
             </Styled.Svg>

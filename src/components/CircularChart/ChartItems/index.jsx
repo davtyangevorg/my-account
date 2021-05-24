@@ -10,15 +10,14 @@ const ChartItems = ({
     data,
     setIsShowTooltip,
     setTooltipPosition,
-    chartWrapperPosition,
     setTooltipData,
 }) => {
     const handleMouseMove = (event, tooltipData) => {
         setTooltipData(tooltipData);
         setIsShowTooltip(true);
         setTooltipPosition({
-            x: event.clientX - chartWrapperPosition.x,
-            y: event.clientY - (chartWrapperPosition.y - 100),
+            x: event.clientX,
+            y: event.clientY
         });
     };
 

@@ -61,7 +61,7 @@ export const Tooltip = styled.div.attrs((props) => ({
     box-shadow: 0px 3px 6px #252e484d;
     font-size: 14px;
     border-radius: 10px;
-    position: absolute;
+    position: fixed;
     color: white;
     background-color: #545f7e;
     padding: 20px;
