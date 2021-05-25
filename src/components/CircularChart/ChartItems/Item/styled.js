@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const CirclePath = styled.path`
     stroke: ${(props) => props.color};
@@ -20,4 +20,13 @@ export const CirclePath = styled.path`
         position: absolute;
         background-color: black;
     }
+`;
+
+export const TooltipInner = styled.div`
+    box-shadow: 0px 3px 6px #252e484d;
+    font-size: 14px;
+    border-radius: 10px;
+    color: white;
+    background-color: #545f7e;
+    padding: 20px;
 `;

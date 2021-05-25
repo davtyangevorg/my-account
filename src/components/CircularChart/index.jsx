@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 
 import * as Styled from "./styled.js";
 
@@ -10,12 +10,6 @@ import ChartItems from "./ChartItems/index.jsx";
 const PATH_COMMANDS = "M18 2 a 15 15 0 0 1 0 31 a 15 15 0 0 1 0 -31";
 
 const CircularChart = ({ totalSize, data, usedSize }) => {
-    const [isShowTooltip, setIsShowTooltip] = useState(false);
-    const [tooltipData, setTooltipData] = useState();
-    const [tooltipPosition, setTooltipPosition] = useState({
-        x: 0,
-        y: 0,
-    });
     const chartRef = useRef();
 
     return (
@@ -31,9 +25,6 @@ const CircularChart = ({ totalSize, data, usedSize }) => {
                     PATH_COMMANDS={PATH_COMMANDS}
                     totalSize={totalSize}
                     data={data}
-                    setIsShowTooltip={setIsShowTooltip}
-                    setTooltipPosition={setTooltipPosition}
-                    setTooltipData={setTooltipData}
                 />
             </Styled.Svg>
             <Styled.Title>Used</Styled.Title>
@@ -42,13 +33,6 @@ const CircularChart = ({ totalSize, data, usedSize }) => {
                 <Styled.PercentSpan>%</Styled.PercentSpan>
             </Styled.UsedPercent>
             <Styled.UsedSize>{usedSize} GB</Styled.UsedSize>
-            <Styled.Tooltip
-                isShowTooltip={isShowTooltip}
-                x={`${tooltipPosition.x}px`}
-                y={`${tooltipPosition.y}px`}
-            >
-                {tooltipData?.name} {tooltipData?.size}GB
-            </Styled.Tooltip>
         </Styled.CircularChartWrapper>
     );
 };

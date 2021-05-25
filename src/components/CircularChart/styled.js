@@ -52,18 +52,3 @@ export const UsedSize = styled.p`
     font-size: 14px;
     font-weight: 600;
 `;
-export const Tooltip = styled.div.attrs((props) => ({
-    style: {
-        top: props.y,
-        left: props.x,
-    },
-}))`
-    box-shadow: 0px 3px 6px #252e484d;
-    font-size: 14px;
-    border-radius: 10px;
-    position: fixed;
-    color: white;
-    background-color: #545f7e;
-    padding: 20px;
-    display: ${(props) => (props.isShowTooltip ? "block" : "none")};
-`;
